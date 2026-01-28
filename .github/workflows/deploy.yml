@@ -22,9 +22,9 @@ jobs:
 
       - name: Deploy files
         run: |
-          rsync -avz --delete \
-          --exclude=".git" \
-          --exclude=".github" \
-          -e "ssh -p ${{ secrets.SSH_PORT }}" \
-          ./ \
-          ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/
+     rsync -avz --delete \
+--exclude=".git" \
+--exclude=".github" \
+-e "ssh -p ${{ secrets.SSH_PORT }}" \
+./ \
+"${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/"
